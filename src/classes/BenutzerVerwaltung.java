@@ -1,6 +1,8 @@
 package classes;
 
-public interface BenutzerVerwaltung {
+import java.io.Serializable;
+
+public interface BenutzerVerwaltung extends Serializable{
 
 	/*
 	 * Function for saving user in database

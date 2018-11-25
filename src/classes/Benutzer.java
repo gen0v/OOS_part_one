@@ -3,12 +3,14 @@
  */
 package classes;
 
+import java.io.Serializable;
+
 /**
  * @author Eugen 
  * This class is for creating the Users.
  *
  */
-public class Benutzer {
+public class Benutzer implements Serializable{
 
 	private String userID;
 
@@ -24,6 +26,12 @@ public class Benutzer {
 		this.setPassWort(pass);
 	}
 
+	public Benutzer(String id, String pass) {
+		this.setUserID(id);
+		char[] passC = pass.toCharArray();
+		this.setPassWort(passC);
+	}
+	
 	public String getUserID() {
 		return userID;
 	}

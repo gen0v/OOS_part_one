@@ -25,6 +25,8 @@ public class Main {
 			admin.benutzerEintragen(b1);
 			if(admin.benutzerOK(b1)) {
 				System.out.println("B1 added!");				
+			}else {
+				System.out.println("B1 not added!");
 			}
 			if(!admin.benutzerOK(b2)) {
 				System.out.println("B2 not added!");				
@@ -33,12 +35,27 @@ public class Main {
 			System.out.println(e.getMessage());;
 		}
 		
+		System.out.println(">Adding B1");
+		try {
+			admin.benutzerEintragen(b1);
+			if(admin.benutzerOK(b1)) {
+				System.out.println("B1 added!");				
+			}else {
+				System.out.println("B1 not added!");
+			}
+			if(!admin.benutzerOK(b2)) {
+				System.out.println("B2 not added!");				
+			}
+		} catch (UserAlreadyExistsException | UserIsEmptyException e) {
+			System.out.println(e.getMessage());
+		}
+		
 		System.out.println(">Adding B2");
 		try {
 			admin.benutzerEintragen(b2);
 			System.out.println("B2 added!");
 		} catch (UserAlreadyExistsException | UserIsEmptyException e) {
-			System.out.println(e.getMessage());;
+			System.out.println(e.getMessage());
 		}
 		
 		System.out.println(">Adding Empty User");
@@ -46,7 +63,7 @@ public class Main {
 			admin.benutzerEintragen(empty);
 			System.out.println("Empty added!");
 		} catch (UserAlreadyExistsException | UserIsEmptyException e) {
-			System.out.println(e.getMessage());;
+			System.out.println(e.getMessage());
 		}
 		
 		System.out.println(">Adding B1");
@@ -54,7 +71,7 @@ public class Main {
 			admin.benutzerEintragen(b1);
 			System.out.println("B1 added!");
 		} catch (UserAlreadyExistsException | UserIsEmptyException e) {
-			System.out.println(e.getMessage());;
+			System.out.println(e.getMessage());
 		}
 		
 		System.out.println(">Removing B1");
@@ -63,7 +80,7 @@ public class Main {
 			System.out.println("B1 deleted!");
 		} catch (UserNotFoundException e) {
 			// TODO Auto-generated catch block
-			System.out.println(e.getMessage());;
+			System.out.println(e.getMessage());
 		}
 		
 		System.out.println(">Removing B1");
@@ -82,7 +99,7 @@ public class Main {
 			admin.benutzerEintragen(b1);
 			System.out.println("B1 added!");
 		} catch (UserAlreadyExistsException | UserIsEmptyException e) {
-			System.out.println(e.getMessage());;
+			System.out.println(e.getMessage());
 		}
 
 		System.out.println("Are B1 and B2 equal?");

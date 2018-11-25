@@ -4,7 +4,8 @@
 package classes;
 
 /**
- * @author Eugen This class is for creating the Users.
+ * @author Eugen 
+ * This class is for creating the Users.
  *
  */
 public class Benutzer {
@@ -41,7 +42,7 @@ public class Benutzer {
 
 
 	public boolean equals(Object o) {
-		if (o instanceof Benutzer) {
+		if (o instanceof Benutzer && o != null) {
 			if (((Benutzer) o).userID.equals(this.userID) && 
 					String.copyValueOf(((Benutzer) o).passWort).equals(String.copyValueOf(this.passWort))){
 				

@@ -2,7 +2,7 @@ package classes;
 
 public class Main {
 
-	public static void main(String[] args) throws UserIsEmptyException, UserAlreadyExistsException {
+	public static void main(String[] args){
 		// TESTS
 		char password[] = {'a','b','c'};
 		
@@ -23,7 +23,12 @@ public class Main {
 		System.out.println(">Adding B1");
 		try {
 			admin.benutzerEintragen(b1);
-			System.out.println("B1 added!");
+			if(admin.benutzerOK(b1)) {
+				System.out.println("B1 added!");				
+			}
+			if(!admin.benutzerOK(b2)) {
+				System.out.println("B2 not added!");				
+			}
 		} catch (UserAlreadyExistsException | UserIsEmptyException e) {
 			System.out.println(e.getMessage());;
 		}
@@ -70,6 +75,8 @@ public class Main {
 			System.out.println(e.getMessage());
 		}
 		
+		//mit benutzerok nochmal testen ob gelöscht ist
+		
 		System.out.println(">Adding B1");
 		try {
 			admin.benutzerEintragen(b1);
@@ -77,6 +84,12 @@ public class Main {
 		} catch (UserAlreadyExistsException | UserIsEmptyException e) {
 			System.out.println(e.getMessage());;
 		}
+
+		System.out.println("Are B1 and B2 equal?");
+		System.out.println(b1.equals(b2));
+		
+		System.out.println("Are B1 and B1 equal?");
+		System.out.println(b1.equals(b1));
 	}
 
 }

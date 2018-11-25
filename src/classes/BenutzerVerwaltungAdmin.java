@@ -32,10 +32,16 @@ public class BenutzerVerwaltungAdmin implements BenutzerVerwaltung {
 
 	@Override
 	public boolean benutzerOK(Benutzer benutzer) {
-		if (datenhaltung.contains(benutzer)) {
-			return true;
-		} else {
-			return false;
+		return (datenhaltung.contains(benutzer) );
+
+	}
+	
+	public void test() {
+		try {
+			benutzerLoeschen(null);
+		} catch (UserNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
